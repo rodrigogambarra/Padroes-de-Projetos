@@ -9,7 +9,7 @@
 <a href="#funcionalidades">Funcionalidades</a> |
 <a href="#tecnologias">Tecnologias</a> |
 <a href="#serviços-usados">Serviços usados</a> |
-<a href="#imagens">Imagens</a> |
+<a href="#padroes">Padrões de projeto utilizados</a> |
 <a href="#como-usar">Como usar</a> |
 <a href="#pré-requisitos">Pré-requisitos</a> |
 <a href="#links">Links</a> |
@@ -52,7 +52,49 @@ Esse projeto foi desenvolvido para praticar a utilização dos principais padrõ
 * GitHub
 
 
-## Imagens
+## Padroes
+
+* <b> STRATEGY - Também conhecido como: Estratégia </b>
+
+Foi utilizado este padrão para separar as regras de negócio do cálculo de impostos ICMS e ISS. Foi criada uma classe para cada imposto, cada um com sua estratégia de cálculo que implementa 
+a interface "Imposto" e define a sua regra no método "Calcular". Caso futuramente sejam criados novos impostos com novas regras basta criar outras classes específicas que implemente a interface "Imposto".
+
+Mais detalhes sobre este padrão: https://refactoring.guru/pt-br/design-patterns/strategy
+
+* <b> Chain of Responsibility - Também conhecido como: CoR, Corrente de responsabilidade, Corrente de comando, Chain of command</b>
+
+Foi utilizado este padrão na implementação dos descontos, onde cada desconto é aplicado conforme o valor e o número de ítens do orçamento. Com a aplicação do 
+padrão "corrente de comando", foi criada uma CalculadoraDeDescontos com o método "Cálcular" que instancia cada classe desconto em uma cadeia de ocorrência, fazendo uso da classe abstrata "Desconto" que contém um atributo próximo do tipo "Desconto".
+
+Mais detalhes sobre este padrão: https://refactoring.guru/pt-br/design-patterns/chain-of-responsibility
+
+* <b> Pattern Template Method - Também conhecido como: Método padrão</b>
+
+O padrão <b>Template</b> foi utilizado com a criação do método padrão: "Calcular" da classe abstrata "Desconto". Este método é padrão para as classes filhas que realizam o desconto, a classe mãe apenas pergunta se deve aplicar e efetuar cálculo e as filhas respontem.
+
+O Template Method é um padrão de projeto comportamental que define o esqueleto de um algoritmo na superclasse mas deixa as subclasses sobrescreverem etapas específicas do algoritmo sem modificar sua estrutura.
+
+Mais detalhes sobre este padrão: https://refactoring.guru/design-patterns/template-method
+
+* <b> Pattern State - Também conhecido como: Estado</b>
+
+Foi utilizado este padrão com a definição dos estados que cada orçamento pode assumir. Atribuindo condições de transitividade entre os estados. Exemplo: o estado <b>Aprovado</b> não pode voltar para o estado <b>Em Análise</b>, e o estado <b>Reprovado</b> não pode ir para o estado <b>Aprovado</b>. 
+
+Mais detalhes sobre este padrão: https://refactoring.guru/design-patterns/state
+
+* <b> Pattern Command - Também conhecido como: Comando, Ação, Action, Transação, Transaction</b>
+
+Foi utilizado o padrão <b>Command</b> para disparar as ações relacionadas aos pedidos criados, ou seja, sempre que um pedido é criado há sempre uma sequencia de ações a serem feitas, como *CriarPedidoNoBanco* e *EnviarPedidoPorEmail*, para não executar essas ações separadamente após a criação de um pedido, 
+foram criadas as classes GeraPedido e GeraPedidoHandler que farão a distribuição das ações a serem realizadas.
+
+Exemplo: https://refactoring.guru/pt-br/design-patterns/command
+
+
+* <b> Pattern Observer - Também conhecido como: Observador, Assinante do evento, Event-Subscriber, Escutador, Listener</b>
+
+Foi utilizado o padrão <b>Observer</b> para que cada ação seja executada com a criação do *GeraPedidoHandler* e a execução do seu método *Executar*. Cada ação passada pela lista de ações pelo construtor de *GeraPEdidoHandler* será executada com o comando *Executar*.
+
+EMais detalhes sobre este padrão: https://refactoring.guru/pt-br/design-patterns/observer
 
 
 ## Como usar
@@ -62,10 +104,8 @@ Esse projeto foi desenvolvido para praticar a utilização dos principais padrõ
 Java devidamente instalado
 
 ## Links
-* Repositório: https://github.com/rodrigogambarra/OrcamentosApp
-* Deploy: https://portalcondominio.herokuapp.com/
-* Vídeo explicativo e demonstração do projeto em execução: https://youtu.be/KP0D71ph61M
-* Segundo vídeo explicativo e demonstração do projeto em execução: https://www.youtube.com/watch?v=V3g5KyKVJFo&list=PLO7K0b9tHLUuPh_KBSlN4elpfwOYwgnrg&index=2
+* Repositório: https://github.com/rodrigogambarra/Padroes-de-Projetos
+
 
 ## Autor
 ✨ Feito por Rodrigo Gambarra!!
