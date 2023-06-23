@@ -17,6 +17,8 @@ public class GeraPedidoHandler {
 		acoesAposGerarPedido = acoesAposGerarPedidos;
 	}
 
+	//Método que servirá como fachada para toda a execução das regras de negócio implementadas em cada ação
+	//Este único método simples é que será exposto para utilização pelas classes clientes que necessitarem da execução das ações
 	public void executar(GeraPedido geraPedido) {
 		Orcamento orcamento = new Orcamento(geraPedido.getValorOrcamento(), geraPedido.getQuantidadeItens());
 		Pedido pedido = new Pedido(geraPedido.getCliente(), LocalDateTime.now(), orcamento);
