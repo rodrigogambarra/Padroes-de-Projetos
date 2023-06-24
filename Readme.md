@@ -1,5 +1,5 @@
-<h1 align="center">Sistema que simula operações financeiras de uma loja utilizando alguns padrões de projetos</h1>
-<p align="center">Aplicando padrões de projetos descritos no livro *"Gang of Four"*</p>
+<h1 align="center">PRIMEIRO PROJETO que simula operações financeiras de uma loja - desenvolvido com a utilização dos principais padrões de projetos</h1>
+<p align="center">Aplicando padrões de projetos do livro *"Gang of Four"*</p>
 
 ---
 
@@ -7,17 +7,16 @@
 <p align="center">
 <a href="#sobre">Sobre</a> |
 <a href="#funcionalidades-e-descrição-dos-padrões-utilizados">Funcionalidades</a> |
-<a href="#tecnologias">Tecnologias</a> |
+<a href="#tecnologias-utilizadas">Tecnologias</a> |
 <a href="#serviços-usados">Serviços usados</a> |
 <a href="#padroes-de-projetos-utilizados">Padrões de projetos utilizados</a> |
-<a href="#como-usar">Como usar</a> |
 <a href="#pré-requisitos">Pré-requisitos</a> |
 <a href="#links">Links</a> |
 <a href="#autor">Autor</a></p>
 
 
 ## Sobre
-Esse projeto foi desenvolvido para praticar a utilização dos principais padrões de projetos descritos no livro *"Gang of Four"* que descreve um total de 22 padrões de projetos com a finalidade de solucionar problemas comuns em projeto de software.
+Esse projeto foi desenvolvido com a utilização dos principais padrões de projetos descritos no livro *"Gang of Four"* que descreve um total de 22 padrões e formas de solucionar diferentes tipos de problemas no desenvolivmento de projetos de software.
 
 
 ## Funcionalidades e descrição dos padrões utilizados
@@ -46,7 +45,7 @@ Esse projeto foi desenvolvido para praticar a utilização dos principais padrõ
 ## Tecnologias utilizadas
 * Java 20
 
-## Serviços uzados
+## Serviços usados
 * Intellij (Idea)
 * GitHub
 
@@ -100,11 +99,8 @@ Foi utilizado o padrão <b>Facade</b> com a disponibilização do método "Execu
 
 Mais detalhes sobre este padrão: https://refactoring.guru/pt-br/design-patterns/facade
 
-## Como usar
-
-
 ## Pré-requisitos
-Java devidamente instalado
+Java 20
 
 ## Links
 * Repositório: https://github.com/rodrigogambarra/Padroes-de-Projetos
